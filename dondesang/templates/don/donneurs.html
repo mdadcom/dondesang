@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<script>
+    function FindAge(){
+        var day = document.getElementById("date_de_naissance").value;
+        var DATE = new Date(day);
+        var today = new Date();
+        var Age = today.getTime() - DATE.getTime();
+        Age = Math.floor(Age/(1000*60*60*24*365.25));
+        document.getElementById("age").value = Age;
+}
+</script>
+<form class="card card-body" method="post" action="{% url 'ad-donneur' %}" id="donneurform" data-donneur-url="{% url 'load-donneur' %}">
+    {% csrf_token %}
+        <div class="row mb-1">
+            <div class="col">
+                <div class="form">
+                    <input type="text" name="numero_cnib" id="numero_cnib" placeholder="Entre votre Numero Cnib" class="form-control" required/>
+                    <label class="form-label" for="form6Example1" required>Numero Cnib</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form">
+                    <input type="text" name="nom" id="nom" placeholder="Entre votre Nom" class="form-control" required/>
+                    <label class="form-label" for="form6Example1" autocomplete="name" required>Nom de Famille</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form">
+                    <input type="text" name="nom_de_jeune" placeholder="" id="nom_de_jeune" class="form-control"/>
+                    <label class="form-label" for="form6Example2" required>Nom de jeunesse</label>
+                </div>
+            </div>
+        </div>      
+        <br><br>
+    <div class="row mb-1">
+        <div class="col mb-1">
+            <div class="form">  
+                <input type="text" name="prenom" id="prenom"  placeholder="Saisissez votre Prenom" class="form-control" required/>
+            </div>
+        </div>
+    </div>   
+        <br><br>
+    <div class="row mb-1">
+        <div class="col">
+            <div class="form">
+                <input type="date" name="date_de_naissance" onmousemove="FindAge()" id="date_de_naissance" class="form-control" required/>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <input type="text" name="age" id="age" onmousemove="FindAge()"  placeholder="Age" class="form-control" required/>
+            </div>
+        </div>
+   
+        <div class="col">
+            <div class="form">
+                <input type="text" name="lieu_de_naissance" id="lieu_de_naissance" placeholder="Lieu de Naissance" class="form-control" required/>
+            </div>
+        </div>
+    </div> 
+        <br><br>
+    <div class="row mb-1" id="sexe">
+        <div class="col">
+            <div class="form">
+                <label class="form-label" for="sexe" required>sexe :</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <select name="sexe" class="form-control" required>
+                    
+                    <option value="H">Homme</option>
+                    <option value="F">Femme</option>
+                </select>
+            </div>
+        </div>   
+    </div>      
+    <div class="col">
+        <div class="form">
+            <input type="text" name="profession" id="profession"  placeholder="Profession" class="form-control" required/>
+        </div>
+    </div>
+            <br><br>
+<div class="row mb-1">
+    <div class="col">
+        <div class="form">
+            <label class="form-label" for="ville secteur tel email" required>Adresse:</label>
+        </div>
+    </div>
+    <div class="form">
+        <label class="form-label" for="ville">Ville:</label>
+    </div>
+    <div class="col">
+        <div class="form">
+            <select name="ville" class="form-control" required>
+                {% for ville in ville %}
+                <option value="{{ville.id}}">{{ville.nom}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>   
+      
+    <div class="col">
+        <div class="form">
+            <input type="text" name="secteur" id="secteur" placeholder="Secteur" class="form-control" required/>
+        </div>
+    </div>    
+    <br><br>
+    <div class="col">
+        <div class="form">
+            <input type="number" name="tel" id="tel" placeholder="Numero de Telephone" id="form6Example3" class="form-control" required/>
+        </div>
+    </div>
+    <div class="col">
+        <div class="form">    
+            <input type="email" name="email" id="email" placeholder="Email" class="form-control" required/>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="row mb-1">
+    <div class="form">
+        <label class="form-label" for="type" required>Type de Don : </label>
+    </div>
+
+    <div class="col">
+        <div class="form">    
+            <select name="type" class="form-control" required>
+                {% for type in type %}
+                <option value="{{type.id}}">{{type.nom}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="btn">
+            <button type="submit" class="btn btn-primary btn-block mb-4 " style="200px">Enregistre</button>
+        </div>
+    </div>
+</form>
+<script>
+    $(document).ready(function() {
+        // Récupérer l'élément HTML du champ d'entrée pour le numéro de CNIB
+        var numeroCnibInput = $('#numero_cnib');
+      
+        // Associer un gestionnaire d'événements "keyup" à l'élément HTML
+        numeroCnibInput.keyup(function() {
+          // Récupérer la valeur entrée par l'utilisateur
+          var numeroCnib = numeroCnibInput.val();
+      
+          // Envoyer une requête AJAX à la vue "load-donneur" pour récupérer les données du donneur correspondant au "numero_cnib"
+          $.ajax({
+            url: "/load-donneur/",
+            data: {
+              "numero_cnib": numeroCnib
+            },
+            dataType: "json",
+            success: function(data) {
+              if (data.donneur) {
+                $('#nom').val(data.donneur.nom);
+                $('#nom_de_jeune').val(data.donneur.nom_de_jeune);
+                $('#prenom').val(data.donneur.prenom);
+                $('#date_de_naissance').val(data.donneur.date_de_naissance);
+                $('#age').val(data.donneur.age);
+                $('#lieu_de_naissance').val(data.donneur.lieu_de_naissance);
+                $('#profession').val(data.donneur.profession);
+                $('#sexe').val(data.donneur.sexe);
+                $('#ville').val(data.donneur.ville);
+                $('#secteur').val(data.donneur.secteur);
+                $('#tel').val(data.donneur.tel);
+                $('#email').val(data.donneur.email);
+                $('#type').val(data.donneur.type);
+              }
+            },
+            error: function(xhr, status, error) {
+              console.log(xhr.responseText);
+            }
+          });
+        });
+      });
+      
+ </script>
+{% endblock  %}

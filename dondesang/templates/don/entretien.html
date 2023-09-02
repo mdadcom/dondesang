@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ENTRETIEN MEDICAL|</title>
+
+    <!-- Bootstrap -->
+    <link href="{% static 'vendors/bootstrap/dist/css/bootstrap.min.css'%}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{% static 'vendors/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{% static 'vendors/nprogress/nprogress.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'css/entre.css'%}">
+    <!-- Custom Theme Style -->
+    <link href="{% static 'build/css/custom.min.css'%}" rel="stylesheet">
+    <script src="{% static 'js/save.js' %}"></script>
+    <script src="{% static 'js/consens.js' %}"></script>
+        
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="/" class="site_title"><i class="fa fa-plus-square"></i> <span>Don de Sang</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="{% static 'img/gouttes-de-sang-efs-head.jpg' %}" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>DONNER,SON SANG</span>
+                <h2>C'EST SAUVER DES VIES</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a href="/"><i class="fa fa-home"></i> HOME</a>
+                  </li>
+                  <li><a><i class="#"></i> Config <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{% url 'ad-pays' %}">Pays</a></li>
+                      <li><a href="{% url 'ad-region' %}">Region</a></li>
+                      <li><a href="{% url 'ad-ville' %}">Ville</a></li>
+                      <li><a href="{% url 'affcong' %}">Afficher Config</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="#"></i> Collects <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{% url 'collects' %}">Nouveau Collect</a></li>
+                      <li><a href="{% url 'affcol' %}">Afficher Collect</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="#"></i> Donneur <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{% url 'donneurs' %}">Nouveau Donneur</a></li>
+                      <li><a href="{% url 'details' %}">Afficher Donneur</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+              <nav class="nav navbar-nav">
+              <ul class=" navbar-right">
+                <li class="nav-item dropdown open" style="padding-left: 15px;">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/img.jpg" alt="">John Doe
+                  </a>
+                  <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item"  href="javascript:;"> Profile</a>
+                      <a class="dropdown-item"  href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                  <a class="dropdown-item"  href="javascript:;">Help</a>
+                    <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  </div>
+                </li>
+
+                <li role="presentation" class="nav-item dropdown open">
+                  <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green">6</span>
+                  </a>
+                  <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                    <li class="nav-item">
+                      <a class="dropdown-item">
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="dropdown-item">
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="dropdown-item">
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="dropdown-item">
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <div class="text-center">
+                        <a class="dropdown-item">
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+       
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="row">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>FICHE D'ENTRETIEN MEDICAL PRE DON</h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5  form-group row pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                              <button class="btn btn-secondary" type="button">Go!</button>
+                          </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="row">
+
+              <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>ENTRETIEN MEDICAL <small>Don</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                      <div class="containeur">
+                        <div class="row">
+                        <form method="post" action="{% url 'entretien' %}">
+                            {% csrf_token %}
+                            <forms id="form1">
+                                <h3>FICHE D'ENTRETIEN MEDICAL PRE DON</h3>
+                                <input type="date" name="date_du_jour" placeholder="Date du jour">
+                                <input type="number" name="numero" placeholder="Numero de don">
+                            <div class="row mb-1">
+                                <div class="col">
+                                    <div class="form">
+                                        <label class="form-label" for="collecte">1.Type collecte</label>
+                                        <select name="collecte" class="form-control" required>
+                                            <option >---Choisir---</option>
+                                            <option value="Fixe">Fixe</option>
+                                            <option value="Mobile">Mobile</option>
+                                            
+                                        </select>
+                                    </div>
+                                </div>   
+                        
+                               
+                            </div>  
+                                <div class="radio-details">
+                                    <input type="radio" name="premier" value="Oui" id="premier-1">
+                                    <input type="radio" name="premier" value="Non" id="premier-2">
+                                    <span class="radio-title">2.Est-ce votre premier don</span>
+                                    <div class="category">
+                                        <label for="premier-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="premier-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="champ-si_premier" style="display:none;">
+                                 <input type="text" name="si_premier" id="si_premier" placeholder="si premier">
+                                </div>
+                                <div class="radio-details">
+                                    <input type="radio" name="en_couple" value="Oui" id="en_couple-1">
+                                    <input type="radio" name="en_couple" value="Non" id="en_couple-2">
+                                    <input type="radio" name="en_couple_oui" value="Monogamie" id="en_couple_oui-1">
+                                    <input type="radio" name="en_couple_oui" value="Polygamie" id="en_couple_oui-2">
+                                    <input type="radio" name="en_couple_non" value="Celiba" id="en_couple_non-1">
+                                    <input type="radio" name="en_couple_non" value="Divorce" id="en_couple_non-2">
+                                    <input type="radio" name="en_couple_non" value="veuf" id="en_couple_non-3">
+                                    <span class="radio-title">3.Vivez-vous en couple</span>
+                                    <div class="category">
+                                        <label for="en_couple-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI  :</span>
+                                        </label>
+                                        <label for="en_couple_oui-1">
+                                            <span class="dot three"></span>
+                                            <span class="radio">Monogamie</span>
+                                        </label>
+                                        <label for="en_couple_oui-2">
+                                            <span class="dot four"></span>
+                                            <span class="radio">Poligamie</span>
+                                        </label>
+                                    </div>
+                                <div class="category">
+                                    <label for="en_couple-2">
+                                        <span class="dot two"></span>
+                                        <span class="radio">NON  :</span>
+                                    </label>
+                                    <label for="en_couple_non-1">
+                                        <span class="dot five"></span>
+                                        <span class="radio">Célibataire</span>
+                                    </label>
+                                    <label for="en_couple_non-2">
+                                        <span class="dot six"></span>
+                                        <span class="radio">Divorcé(e)</span>
+                                    </label>
+                                    <label for="en_couple_non-3">
+                                        <span class="dot seven"></span>
+                                        <span class="radio">Veuf(ve)</span>
+                                    </label>
+                                </div>
+                            </div>
+                                <div class="btn-box">
+                                    <button type="button" id="next1">Suivent</button>
+                                </div>
+                            </forms>
+                
+                
+                            <forms id="form2">
+                                <h3>FICHE D'ENTRETIEN MEDICAL PRE DON</h3>
+                                
+                            <div class="radio-details">
+                                <input type="radio" name="sante" value="Oui" id="sante-1">
+                                <input type="radio" name="sante" value="Non" id="sante-2">
+                                <span class="radio-title">4.Vous sentez-vous en 'bonne santé' en ce moment</span>
+                                <div class="category">
+                                    <label for="sante-1">
+                                        <span class="dot one"></span>
+                                        <span class="radio">OUI</span>
+                                    </label>
+                                    <label for="sante-2">
+                                        <span class="dot two"></span>
+                                        <span class="radio">NON</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label><h4>5.Avez-vous eu par le passe ou avez vous actuellement une ou plusieurs des affections suivantes?</h4></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2 col-sm- label-align">
+                                    Infarctus
+                                      <input type="checkbox"  id="checkbox" name="affections" value="Infarctus" > 
+                                     
+                                  </label>
+                                  <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    Tuberculose
+                                      <input type="checkbox"  id="checkbox" name="affections" value="Tuberculose"  >
+                                          
+                                      
+                                  </label>
+                                  <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    HTA instable
+                                      <input type="checkbox"  id="checkbox" name="affections" value="HTA instable"  >
+                                      
+                                  </label>
+                                  <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    Autre maladie chronique grave aigu
+                                      <input type="checkbox"  id="checkbox" name="affections" value="Autre maladie chronique grave"  >
+                                      
+                                  </label>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    Epilepsie
+                                      <input type="checkbox"  id="checkbox" name="affections" value="Epilepsie"  >
+                                          
+                                      
+                                  </label>
+                                  <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    Cancer
+                                      <input type="checkbox"  id="checkbox" name="affections" value="Cancer"  >
+                                      
+                                  </label>
+                                  <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    Trouble cardiaques
+                                      <input type="checkbox"  id="checkbox" name="affections" value="Trouble cardiaques"  >
+                                          
+                                      
+                                  </label>
+                                  <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    Angine de poitrine
+                                      <input type="checkbox"  id="checkbox" name="affections" value="Angine de poitrine"  >
+                                      
+                                  </label>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    Dermatose
+                                  <input type="checkbox"  id="checkbox" name="affections" value="Dermatose"  >
+                                  </label>
+                                  <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    Rhumatisme Articulaire aigu
+                                    <input type="checkbox"  id="checkbox" name="affections" value="Rhumatisme Articulaire"  >
+                                      
+                                </label>
+                                  <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    Diabète sous insuline
+                                      <input type="checkbox"  id="checkbox" name="affections" value="Diabète sous insuline"  >
+                                          
+                                      
+                                  </label>
+                                  <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    Maladie du foie
+                                      <input type="checkbox"  id="checkbox" name="affections" value="Maladie du foie"  >
+                                          
+                                      
+                                  </label>
+                                 
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    Drépanocytose(ss,sc,cc,)
+                                  <input type="checkbox"  id="checkbox" name="affections" value="Drépanocytose(ss,sc,cc,)"  >
+                                  
+                                </label>
+                                <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    Trouble de la coagulation sanguine
+                                  <input type="checkbox"  id="checkbox" name="affections" value="Trouble de la coagulation sanguine"  >
+                                      
+                                  
+                              </label>
+                                   <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    Asthme instable(crise -de 6mois)
+                                    <input type="checkbox"  id="checkbox" name="affections" value="Asthme instable(crise -de 6mois)"  >
+                                          
+                                      
+                                  </label>
+                                  <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                    Maladie Neurologique
+                                      <input type="checkbox"  id="checkbox" name="affections" value="Maladie Neurologique"  >
+                                          
+                                      
+                                  </label>
+                              
+                          </div>
+                            <div class="form-group row">
+                              <label class="col-form-label col-md-2 col-sm-2 label-align">
+                                Aucune
+                                <input type="checkbox"  id="checkbox" name="affections" value="Aucune"  >  
+                                
+                            </label>
+                            </div>
+                            
+                                <div class="btn-box">
+                                    <button type="button" id="back1">Precedent</button>
+                                    <button type="button" id="next2">Suivent</button>
+                                </div>
+                            
+                            </forms>
+            
+                            <forms id="form3">
+                                <h3>FICHE D'ENTRETIEN MEDICAL PRE DON</h3>
+                                <div class="radio-details">
+                                    <input type="radio" name="transfusion" value="Oui" id="transfusion-1">
+                                    <input type="radio" name="transfusion" value="Non" id="transfusion-2">
+                                    <span class="radio-title">6.Avez-vous déjà eu une transfusion de sang</span>
+                                    <div class="category">
+                                        <label for="transfusion-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="transfusion-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                               
+                                <div class="radio-details">
+                                    <input type="radio" name="drogue" value="Oui" id="drogue-1">
+                                    <input type="radio" name="drogue" value="Non" id="drogue-2">
+                                    <span class="radio-title">7.Avez-vous déjà pris de la drogue(en injection, ou nasale ou fumé)</span>
+                                    <div class="category">
+                                        <label for="drogue-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="drogue-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="radio-details">
+                                    <input type="radio" name="tatou" value="Oui" id="tatou-1">
+                                    <input type="radio" name="tatou" value="Non" id="tatou-2">
+                                    <label for="">Au cours des 12 derniers mois, avez-vous:</label><br><br>
+                                    <span class="radio-title">8.Fait des tatouages, scarifications, percées d'oreilles ou autre piercing?</span>
+                                    <div class="category">
+                                        <label for="tatou-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="tatou-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="radio-details">
+                                    <input type="radio" name="infection" value="Oui" id="infection-1">
+                                    <input type="radio" name="infection" value="Non" id="infection-2">
+                                    <span class="radio-title">9.Eu une infection sexuellement transmissible(IST)(syphilis,gonococcie,ect.)?</span>
+                                    <div class="category">
+                                        <label for="infection-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="infection-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="radio-details">
+                                    <input type="radio" name="exposition" value="Oui" id="exposition-1">
+                                    <input type="radio" name="exposition" value="Non" id="exposition-2">
+                                    <span class="radio-title">10.Eu un accident d'exposition au sang ou tout autre liquide biologique</span>
+                                    <div class="category">
+                                        <label for="exposition-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="exposition-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="btn-box">
+                                    <button type="button" id="back2">Precedent</button>
+                                    <button type="button" id="next3">Suivent</button>
+                                </div>
+                            </forms>
+                
+                            <forms id="form4">
+                                <h3>FICHE D'ENTRETIEN MEDICAL PRE DON</h3>
+                                <div class="radio-details">
+                                    <input type="radio" name="relations" value="Oui" id="relations-1">
+                                    <input type="radio" name="relations" value="Non" id="relations-2">
+                                    <span class="radio-title">11.Eu des relations sexuelles avec un(e) prostitué(e) ou contre récompense</span>
+                                    <div class="category">
+                                        <label for="relations-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="relations-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="radio-details">
+                                    <input type="radio" name="chirgi" value="Oui" id="chirgi-1">
+                                    <input type="radio" name="chirgi" value="Non" id="chirgi-2">
+                                    <label>Au cours des 6 derniers mois, avez-vous:</label><br><br>
+                                    <span class="radio-title">12.Subit une intervention chirurgicale?</span>
+                                    <div class="category">
+                                        <label for="chirgi-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="chirgi-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <label for="n_partenaire">
+                                    <span class="radio-title">13.Combien de partenaires sexuels différents avez-vous eu?</span>
+                                </label>
+                                    <input type="number" name="n_partenaire" placeholder="Combien de partenaires sexuels différents avez-vous eu?">
+                                <div class="radio-details">
+                                    <input type="radio" name="enceinte" value="Oui" id="enceinte-1">
+                                    <input type="radio" name="enceinte" value="Non" id="enceinte-2">
+                                    <span class="radio-title">14.Avez-vous été enceinte, accouché, avorté?(sujets féminins uniquement)</span>
+                                    <div class="category">
+                                        <label for="enceinte-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="enceinte-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="radio-details">
+                                    <input type="radio" name="acupuncture" value="Oui" id="acupuncture-1">
+                                    <input type="radio" name="acupuncture" value="Non" id="acupuncture-2">
+                                    <label>Au cours des 3 derniers mois, avez-vous:</label><br><br>
+                                    <span class="radio-title">15.Subit une endoscopie et/ou un traitement par acupuncture?</span>
+                                    <div class="category">
+                                        <label for="acupuncture-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="acupuncture-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="btn-box">
+                                    <button type="button" id="back3">Precedent</button>
+                                    <button type="button" id="next4">Suivent</button>
+                                </div>
+                            </forms>
+                             <forms id="form5">
+                                <h3>FICHE D'ENTRETIEN MEDICAL PRE DON</h3>
+                                <div class="radio-details">
+                                    <input type="radio" name="sut_plaies" value="Oui" id="sut_plaies-1">
+                                    <input type="radio" name="sut_plaies" value="Non" id="sut_plaies-2">
+                                    <span class="radio-title">16.Subit des sutures de plaies?</span>
+                                    <div class="category">
+                                        <label for="sut_plaies-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="sut_plaies-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="radio-details">
+                                    <input type="radio" name="partenaire_s" value="Oui" id="partenaire_s-1">
+                                    <input type="radio" name="partenaire_s" value="Non" id="partenaire_s-2">
+                                    <span class="radio-title">17.Eu un nouveau partenaire sexuel?</span>
+                                    <div class="category">
+                                        <label for="partenaire_s-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="partenaire_s-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="radio-details">
+                                    <span class="radio-title">18.Au Cours des 30 derniers jours, avez-vous vacciné contre : </span>
+                                    <div class="category">
+                                        <label for="affections">
+                                            <input type="checkbox" name="vaccin" value="Fièvre jaune">
+                                                
+                                            <span class="radio">Fièvre jaune</span>
+                                        </label>
+                                        <label for="affections">
+                                            <input type="checkbox" name="vaccin" value="Rougeole">
+                                            <span class="radio">Rougeole</span>
+                                        </label>
+                                        <label for="affections">
+                                            <input type="checkbox" name="vaccin" value="Varicelle">
+                                                
+                                            <span class="radio">Varicelle</span>
+                                        </label>
+                                        <label for="affections">
+                                            <input type="checkbox" name="vaccin" value="Rubéole">
+                                            <span class="radio">Rubéole</span>
+                                        </label>
+                                        <label for="affections">
+                                            <input type="checkbox" name="vaccin" value="Typhoïde">
+                                            <span class="radio">Typhoïde</span>
+                                        </label>
+                                        <label for="affections">
+                                            <input type="text" name="auvaccin">
+                                            <span class="radio">Autre vaccin(préciser)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="radio-details">
+                                    <input type="radio" name="s_dentaire" value="Oui" id="s_dentaire-1">
+                                    <input type="radio" name="s_dentaire" value="Non" id="s_dentaire-2">
+                                    <label>Au cours des 15 derniers jours, avez-vous:</label><br><br>
+                                    <span class="radio-title">19.Subit des soins dentaires?</span>
+                                    <div class="category">
+                                        <label for="s_dentaire-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="s_dentaire-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="btn-box">
+                                    <button type="button" id="back4">Precedent</button>
+                                    <button type="button" id="next5">Suivent</button>
+                                </div>
+                            </forms>
+                            <forms id="form6">
+                                <h3>FICHE D'ENTRETIEN MEDICAL PRE DON</h3>
+                                <div class="radio-details">
+                                    <input type="radio" name="fievre" value="Oui" id="fievre-1">
+                                    <input type="radio" name="fievre" value="Non" id="fievre-2">
+                                    <span class="radio-title">20.Fait de la fièvre?</span>
+                                    <div class="category">
+                                        <label for="fievre-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="fievre-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="radio-details">
+                                    <input type="radio" name="plaies_ou" value="Oui" id="plaies_ou-1">
+                                    <input type="radio" name="plaies_ou" value="Non" id="plaies_ou-2">
+                                    <label>Récemment ou en ce moment, avez-vous:</label><br><br>
+                                    <span class="radio-title">21.Des plaies ou des lésions cutanées en cours?</span>
+                                    <div class="category">
+                                        <label for="plaies_ou-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="plaies_ou-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="radio-details">
+                                    <input type="radio" name="medicament" value="Oui" id="medicament-1">
+                                    <input type="radio" name="medicament" value="Non" id="medicament-2">
+                                    <span class="radio-title">22.Pris ou êtes en train de prendre des médicaments?</span>
+                                    <div class="category">
+                                        <label for="medicament-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="medicament-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                               
+                                  <div id="champ-si" style="display:none;">
+                                    <div class="col">
+                                        <div class="form">
+                                            <label class="form-label" for="collecte">Si oui, quels médicaments?</label>
+                                            <select name="medicament_p" class="form-control" >
+                                                <option >---Choisir---</option>
+                                                <option value="Antibiotique dans les 07 jours">Antibiotique dans les 07 jours</option>
+                                                <option value="Anti-inflammatoire/Corticoïde dans les 03 jours">Anti-inflammatoire/Corticoïde dans les 03 jours</option>
+                                                <option value="Antipaludéen dans les 14 jours">Antipaludéen dans les 14 jours</option>
+                                                
+                                            </select>
+                                          </div>
+                                        </div>
+                                <div class="category">
+                                   
+                                    <label for="affections">
+                                        <input type="text" name="aumedicament" value="">
+                                        <span class="radio">Autre médicaments</span>
+                                    </label>
+                                    <label for="affections">
+                                        <input type="text" name="date_de_p" placeholder="AAAA-MM-JJ">
+                                        <span class="radio">date de prise</span>
+                                    </label>
+                                    <label for="affections">
+                                        <input type="text" name="motif_p_medicament" value="">
+                                        <span class="radio">Motif du traitement?</span>
+                                    </label>
+                                </div>
+                              </div>
+                                <div class="btn-box">
+                                    <button type="button" id="back5">Precedent</button>
+                                    <button type="button" id="next6">Suivent</button>
+                                </div>
+                            </forms>
+                            <forms id="form7">
+                                <h3>FICHE D'ENTRETIEN MEDICAL PRE DON</h3>
+                                <div class="radio-details">
+                                    <input type="radio" name="enfant" value="Oui" id="enfant-1">
+                                    <input type="radio" name="enfant" value="Non" id="enfant-2">
+                                    <span class="radio-title">23.Allaitez-vous un enfant?</span>
+                                    <div class="category">
+                                        <label for="enfant-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="enfant-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="radio-details">
+                                    <input type="radio" name="enceint_actu" value="Oui" id="enceint_actu-1">
+                                    <input type="radio" name="enceint_actu" value="Non" id="enceint_actu-2">
+                                    <span class="radio-title">24.Etes-vous enceinte actuellement?</span>
+                                    <div class="category">
+                                        <label for="enceint_actu-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="enceint_actu-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="radio-details">
+                                    <input type="radio" name="en_regle" value="Oui" id="en_regle-1">
+                                    <input type="radio" name="en_regle" value="Non" id="en_regle-2">
+                                    <span class="radio-title">25.Etes-vous en règles(menstruation)?</span>
+                                    <div class="category">
+                                        <label for="en_regle-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="en_regle-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="radio-details">
+                                    <input type="radio" name="resultat_p" value="Oui" id="resultat_p-1">
+                                    <input type="radio" name="resultat_p" value="Non" id="resultat_p-2">
+                                    <input type="radio" name="si_resultat" value="Oui" id="si_resultat-1">
+                                    <input type="radio" name="si_resultat" value="Non" id="si_resultat-2">
+                                    <span class="radio-title">26.Si vous êtes un ancien donneur, avez-vous pris connaissance de vos résultats passés?</span>
+                                    <div class="category">
+                                        <label for="resultat_p-1">
+                                            <span class="dot one"></span>
+                                            <span class="radio">OUI</span>
+                                        </label>
+                                        <label for="resultat_p-2">
+                                            <span class="dot two"></span>
+                                            <span class="radio">NON</span>
+                                        </label>
+                                    </div>
+                               
+                                <span class="radio-title">Si OUI, quel avait été les resultat?</span>
+                                <div class="category">
+                                   <label for="si_resultat-1">
+                                        <span class="dot three"></span>
+                                        <span class="radio">Négatifs</span>
+                                    </label>
+                                    <label for="si_resultat-2">
+                                        <span class="dot four"></span>
+                                        <span class="radio">Positifs</span>
+                                    </label>
+                                    <label for="si_resultat">
+                                        <span class="radio">(lesquels?)</span>
+                                        <input type="text" name="le_resultat">
+                                    </label>
+                                </div>
+                            </div>
+                                <div class="btn-box">
+                                    <button type="button" id="back6">Precedent</button>
+                                    <button type="button" id="next7">Suivent</button>
+                                </div>
+                            </forms>
+                            <forms id="form8">
+                                <h3>FICHE D'ENTRETIEN MEDICAL PRE DON</h3>
+                                <div class="radio-details">
+                                    <div class="category">
+                                        <div class="grouping">
+                                            <label>
+                                                <span class="radio-title">27.Poids</span>
+                                                <input type="text" name="poid">
+                                            </label>
+                                            <label>
+                                                <span class="radio-title">28.Taux d'Hb</span>
+                                                <input type="text" name="taux_hd">
+                                            </label><br><br>
+                                            <label>
+                                                <span class="radio-title">29.TA</span>
+                                                <input type="text" name="ta">
+                                                <span class="radio-title">mmHg(si max > 18 ou min > 10, contrôler dans 10')</span>
+                
+                                            </label>
+                                        </div>
+                                    </div>
+                                  </div>    
+                                  <label>30.Consentement du donneur</label>
+                                        <div class="check">
+                                            <input type="checkbox" name="consentement" value="j_ai bien été informé">
+                                        <label for="consentement">        
+                                            j'ai bien été informé du processus du don et eu la possibilité de poser des question
+                                        </label>
+                                    
+                                    
+                                        
+                                            <input type="checkbox" name="consentement" value="je confirme que">
+                                        <label for="consentement">        
+                                            je confirme que mes données personnelles sont correctes et que j'ai repondu en toute conscience aux questions qui m'ont été posées.
+                                        </label>
+                                    
+                                    
+                                        
+                                            <input type="checkbox" name="consentement" value="je consens à donner de mon sang">
+                                        <label for="consentement">        
+                                            je consens à donner de mon sang et au dépistage qui sera effectué.
+                                        </label>
+                                    
+                                    
+                                        
+                                            <input type="checkbox" name="consentement" value="j_accepte que mon sang">
+                                        <label for="consentement">        
+                                            j'accepte que mon sang soit transfusé à n'importe quel patient et ou servir à la rechercher.
+                                        </label>
+                                    
+                                    
+                                        
+                                            <input type="checkbox" name="consentement" value="j_ai été informé que">
+                                        <label>j'ai été informé que je peux entre en possession des résultats des tests biologiques faits sur mon sang.</label>
+                                    </div>
+                                <div class="btn-box">
+                                    <button type="button" id="back7">Precedent</button>
+                                    <button type="button" id="next8">Suivent</button>
+                                </div>
+                            </forms>
+                            <forms id="form9">
+                                <h3>FICHE D'ENTRETIEN MEDICAL PRE DON</h3>
+                                <div class="radio-details">
+                                    <div class="category">
+                                        <div class="grouping">
+                                            <div class="form">
+                                                <label class="form-label" for="preparation" required="">Conclusion :</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <select name="apte" class="form-control" style="width: 5.7cm;" onchange="toggleDateInput(this)">
+                                                <option >---Choisir---</option>
+                                                <option value="APTE">APTE</option>
+                                                <option value="INAPTE TEMPORAIRE">INAPTE TEMPORAIRE</option>
+                                                <option value="INAPTE DEFINITIVE">INAPTE DEFINITIVE</option>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="dateInputContainer" style="display: none;">
+                                        <label for="dateInput">Date d'inaptitude temporaire :</label>
+                                        <input type="text" id="dateInput" name="datetem" placeholder="AAAA-MM-JJ" style="width: 3cm;">
+                                    </div>
+                                    <div class="radio-details">
+                                        <div class="item form-group">
+                                            <div class="form">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" required="">Code_CI</label>
+                                            </div>
+                                            <div class="form">
+                                                <input type="text" name="code_ci" id="" placeholder="" class="form-control" required="">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div  class="form">
+                                        <label class="form-label" for="form6Example1">(code,Nom et prénom):</label>
+                                        <input type="text" name="identification" id="identification" placeholder="" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <div class="btn-box">    
+                                    <button type="button" id="back8">Precedent</button>
+                                    <button type="submit"  onclick="sauvegarderFormulaire()">Enregistre</button>
+                                </div>
+                            </forms>
+                        </form>
+                        </div>
+                    </div>
+                    <script>
+                        function toggleDateInput(selectElement) {
+                            var dateInputContainer = document.getElementById("dateInputContainer");
+                            var dateInput = document.getElementById("dateInput");
+                            
+                            if (selectElement.value === "INAPTE TEMPORAIRE") {
+                                dateInputContainer.style.display = "block";
+                                dateInput.required = true;
+                            } else {
+                                dateInputContainer.style.display = "none";
+                                dateInput.required = false;
+                            }
+                        }
+                    </script>
+                                <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            ENTRETIEN MEDICAL| <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+                      
+                    
+                    <script>
+            
+                        var form1 = document.getElementById('form1');
+                        var form2 = document.getElementById('form2');
+                        var form3 = document.getElementById('form3');
+                        var form4 = document.getElementById('form4');
+                        var form5 = document.getElementById('form5');
+                        var form6 = document.getElementById('form6');
+                        var form7 = document.getElementById('form7');
+                        var form8 = document.getElementById('form8');
+                        var form9 = document.getElementById('form9');
+            
+                        var next1 = document.getElementById('next1');
+                        var next2 = document.getElementById('next2');
+                        var next3 = document.getElementById('next3');
+                        var next4 = document.getElementById('next4');
+                        var next5 = document.getElementById('next5');
+                        var next6 = document.getElementById('next6');
+                        var next7 = document.getElementById('next7');
+                        var next8 = document.getElementById('next8');
+                        var back1 = document.getElementById('back1');
+                        var back2 = document.getElementById('back2');
+                        var back3 = document.getElementById('back3');
+                        var back4 = document.getElementById('back4');
+                        var back5 = document.getElementById('back5');
+                        var back6 = document.getElementById('back6');
+                        var back7 = document.getElementById('back7');
+                        var back8 = document.getElementById('back8');
+            
+                        next1.onclick = function(){
+                            form1.style.left = "-1750px";
+                            form2.style.left = "20px";
+                        }
+                        back1.onclick = function(){
+                            form1.style.left = "20px";
+                            form2.style.left = "1750px";
+            
+                        }
+                        next2.onclick = function(){
+                            form2.style.left = "-1750px";
+                            form3.style.left = "20px";
+                        }
+                        back2.onclick = function(){
+                            form2.style.left = "20px";
+                            form3.style.left = "1750px";
+                        }
+                        next3.onclick = function(){
+                            form3.style.left = "-1750px";
+                            form4.style.left = "20px";
+                        }
+                        back3.onclick = function(){
+                            form3.style.left = "20px";
+                            form4.style.left = "1750px";
+                        }
+                        next4.onclick = function(){
+                            form4.style.left = "-1750px";
+                            form5.style.left = "20px";
+                        }
+                        back4.onclick = function(){
+                            form4.style.left = "20px";
+                            form5.style.left = "1750px";
+                        }
+                        next5.onclick = function(){
+                            form5.style.left = "-1750px";
+                            form6.style.left = "20px";
+                        }
+                        back5.onclick = function(){
+                            form5.style.left = "20px";
+                            form6.style.left = "1750px";
+                        }
+                        next6.onclick = function(){
+                            form6.style.left = "-1750px";
+                            form7.style.left = "20px";
+                        }
+                        back6.onclick = function(){
+                            form6.style.left = "20px";
+                            form7.style.left = "1750px";
+                        }
+                        next7.onclick = function(){
+                            form7.style.left = "-1750px";
+                            form8.style.left = "20px";
+                        }
+                        back7.onclick = function(){
+                            form7.style.left = "20px";
+                            form8.style.left = "1750px";
+                        }
+                        next8.onclick = function(){
+                            form8.style.left = "-1750px";
+                            form9.style.left = "20px";
+                        }
+                        back8.onclick = function(){
+                            form8.style.left = "20px";
+                            form9.style.left = "1750px";
+                        }
+                    </script>
+                    <script src="{% static 'js/entretien.js' %}"></script>
+                    <script src="{% static 'js/entretin.js' %}"></script>
+
+    <!-- jQuery -->
+    
+    <script src="{% static 'vendors/jquery/dist/jquery.min.js'%}"></script>
+    <!-- Bootstrap -->
+   <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
+    <!-- FastClick -->
+    <script src="{% static 'vendors/fastclick/lib/fastclick.js'%}"></script>
+    <!-- NProgress -->
+    <script src="{% static 'vendors/nprogress/nprogress.js'%}"></script>
+    <!-- jQuery Smart Wizard -->
+    <script src="{% static 'vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js'%}"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="{% static 'build/js/custom.min.js'%}"></script>
+    
+
+	
+  </body>
+</html>

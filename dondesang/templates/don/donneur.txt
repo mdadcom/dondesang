@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gentelella Alela! | </title>
+
+    <!-- Bootstrap -->
+    <link href="{% static 'vendors/bootstrap/dist/css/bootstrap.min.css'%}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{% static 'vendors/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{% static 'vendors/nprogress/nprogress.css'%}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{% static 'build/css/custom.min.css'%}" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>John Doe</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="index.html">Dashboard</a></li>
+                      <li><a href="index2.html">Dashboard2</a></li>
+                      <li><a href="index3.html">Dashboard3</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="form.html">General Form</a></li>
+                      <li><a href="form_advanced.html">Advanced Components</a></li>
+                      <li><a href="form_validation.html">Form Validation</a></li>
+                      <li><a href="form_wizards.html">Form Wizard</a></li>
+                      <li><a href="form_upload.html">Form Upload</a></li>
+                      <li><a href="form_buttons.html">Form Buttons</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="general_elements.html">General Elements</a></li>
+                      <li><a href="media_gallery.html">Media Gallery</a></li>
+                      <li><a href="typography.html">Typography</a></li>
+                      <li><a href="icons.html">Icons</a></li>
+                      <li><a href="glyphicons.html">Glyphicons</a></li>
+                      <li><a href="widgets.html">Widgets</a></li>
+                      <li><a href="invoice.html">Invoice</a></li>
+                      <li><a href="inbox.html">Inbox</a></li>
+                      <li><a href="calendar.html">Calendar</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="tables.html">Tables</a></li>
+                      <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="chartjs.html">Chart JS</a></li>
+                      <li><a href="chartjs2.html">Chart JS2</a></li>
+                      <li><a href="morisjs.html">Moris JS</a></li>
+                      <li><a href="echarts.html">ECharts</a></li>
+                      <li><a href="other_charts.html">Other Charts</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu_section">
+                <h3>Live On</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="e_commerce.html">E-commerce</a></li>
+                      <li><a href="projects.html">Projects</a></li>
+                      <li><a href="project_detail.html">Project Detail</a></li>
+                      <li><a href="contacts.html">Contacts</a></li>
+                      <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="page_403.html">403 Error</a></li>
+                      <li><a href="page_404.html">404 Error</a></li>
+                      <li><a href="page_500.html">500 Error</a></li>
+                      <li><a href="plain_page.html">Plain Page</a></li>
+                      <li><a href="login.html">Login Page</a></li>
+                      <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="#level1_1">Level One</a>
+                        <li><a>Level One<span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="level2.html">Level Two</a>
+                            </li>
+                            <li><a href="#level2_1">Level Two</a>
+                            </li>
+                            <li><a href="#level2_2">Level Two</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="#level1_2">Level One</a>
+                        </li>
+                    </ul>
+                  </li>                  
+                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
+                </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <div class="nav toggle">
+                  <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                </div>
+                <nav class="nav navbar-nav">
+                <ul class=" navbar-right">
+                  <li class="nav-item dropdown open" style="padding-left: 15px;">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                      <img src="images/img.jpg" alt="">John Doe
+                    </a>
+                    <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item"  href="javascript:;"> Profile</a>
+                        <a class="dropdown-item"  href="javascript:;">
+                          <span class="badge bg-red pull-right">50%</span>
+                          <span>Settings</span>
+                        </a>
+                    <a class="dropdown-item"  href="javascript:;">Help</a>
+                      <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    </div>
+                  </li>
+  
+                  <li role="presentation" class="nav-item dropdown open">
+                    <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                      <i class="fa fa-envelope-o"></i>
+                      <span class="badge bg-green">6</span>
+                    </a>
+                    <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <div class="text-center">
+                          <a class="dropdown-item">
+                            <strong>See All Alerts</strong>
+                            <i class="fa fa-angle-right"></i>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>FICHE D'ENTRETIEN MEDICAL PRE DON</h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5  form-group row pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                              <button class="btn btn-secondary" type="button">Go!</button>
+                          </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="row">
+
+              <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Form Wizards <small>Sessions</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+
+                    <!-- Smart Wizard -->
+                    <p>This is a basic form wizard example that inherits the colors from the selected scheme.</p>
+                    <div id="wizard" class="form_wizard wizard_horizontal">
+                      <ul class="wizard_steps">
+                        <li>
+                          <a href="#step-1">
+                            <span class="step_no">1</span>
+                            <span class="step_descr">
+                                              Step 1<br />
+                                              <small>Step 1 description</small>
+                                          </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#step-2">
+                            <span class="step_no">2</span>
+                            <span class="step_descr">
+                                              Step 2<br />
+                                              <small>Step 2 description</small>
+                                          </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#step-3">
+                            <span class="step_no">3</span>
+                            <span class="step_descr">
+                                              Step 3<br />
+                                              <small>Step 3 description</small>
+                                          </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#step-4">
+                            <span class="step_no">4</span>
+                            <span class="step_descr">
+                                              Step 4<br />
+                                              <small>Step 4 description</small>
+                                          </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#step-5">
+                            <span class="step_no">5</span>
+                            <span class="step_descr">
+                                              Step 5<br />
+                                              <small>Step 5 description</small>
+                                          </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#step-6">
+                            <span class="step_no">6</span>
+                            <span class="step_descr">
+                                              Step 6<br />
+                                              <small>Step 6 description</small>
+                                          </span>
+                          </a>
+                        </li>
+                      </ul>
+                      <div id="step-1">
+                        <form class="form-horizontal form-label-left" method="post" action="{% url 'entretien' %}">
+                          {% csrf_token %}
+                          <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Date du jour 
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                              <input type="date" name="date_du_jour" placeholder="Date du jour" class="form-control  ">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Numero de don 
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                              <input type="number" name="numero" placeholder="Numero de don" class="form-control ">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align">1.Type collecte</label>
+                            <div class="col-md-6 col-sm-6 ">
+                              <div id="collecte" class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-secondary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-secondary">
+                                  <input type="radio" name="collecte" value="Fixe"  class="join-btn"> &nbsp; Fixe &nbsp;
+                                </label>
+                                <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-secondary">
+                                  <input type="radio" name="collecte" value="Mobile"  class="join-btn"> Mobile
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align">2.Est-ce votre premier don</label>
+                            <div class="col-md-6 col-sm-6 ">
+                              <div id="premier" class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-secondary" data-toggle-class="btn-primary" id="premier-1"  data-toggle-passive-class="btn-secondary">
+                                  <input type="radio" name="premier" value="Oui" id="premier-1"  class="join-btn"> &nbsp; OUI &nbsp;
+                                </label>
+                                <label class="btn btn-primary" data-toggle-class="btn-primary" id="premier-2"  data-toggle-passive-class="btn-secondary">
+                                  <input type="radio" name="premier" value="Non" id="premier-2"  class="join-btn"> NON
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row" id="champ-si_premier" style="display:none;">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align">Si premier don 
+                            </label>
+                            <div class="col-md-6 col-sm-6 " >
+                              <input type="text" name="si_premier" id="si_premier" placeholder="si premier" class="form-control ">
+                            </div>
+                          </div>
+                        
+                        </form>
+
+                      </div>
+                      <div id="step-2">
+                        <h2 class="StepTitle">FICHE D'ENTRETIEN Page 2 </h2>
+                      <div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">3.Vivez-vous en couple</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="en_couple" value="Oui" id="en_couple-1"  class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="en_couple" value="Non" id="en_couple-2"  class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align"></label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="premier" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple_oui-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="en_couple_oui" value="Monogamie" id="en_couple_oui-1"  class="join-btn"> &nbsp; Monogamie &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple_oui-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="en_couple_oui" value="Polygamie" id="en_couple_oui-2"  class="join-btn"> Polygamie
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row" >
+                          <label class="col-form-label col-md-3 col-sm-3 label-align"></label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="premier" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="premier-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="en_couple_non" value="Celiba" id="en_couple_non-1"  class="join-btn"> &nbsp; Celibataire &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="premier-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="en_couple_non" value="Divorce" id="en_couple_non-2" class="join-btn"> Divorce
+                              </label>
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="premier-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="en_couple_non" value="veuf" id="en_couple_non-3"  class="join-btn"> &nbsp; veuf &nbsp;
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="conditionalField"></div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align">4.Vous sentez-vous en 'bonne santé' en ce moment</label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <div id="en_couple" class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                              <input type="radio" name="sante" value="Oui" id="sante-1" class="join-btn"> &nbsp; OUI &nbsp;
+                            </label>
+                            <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                              <input type="radio" name="sante" value="Non" id="sante-2" class="join-btn"> NON
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                          <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align">5.Avez-vous eu par le</label>
+                            <label class="col-form-label col-md-3 col-sm- label-align">
+                                  <input type="checkbox"  id="checkbox" name="affections" value="Infarctus" > 
+                                  Infarctus
+                              </label>
+                              <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                  <input type="checkbox"  id="checkbox" name="affections" value="Tuberculose"  >
+                                      
+                                  Tuberculose
+                              </label>
+                              <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                  <input type="checkbox"  id="checkbox" name="affections" value="HTA instable"  >
+                                  HTA instable
+                              </label>
+                              <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                  <input type="checkbox"  id="checkbox" name="affections" value="Autre maladie chronique grave"  >
+                                  Autre maladie chronique grave aigu
+                              </label>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                  <input type="checkbox"  id="checkbox" name="affections" value="Epilepsie"  >
+                                      
+                                  Epilepsie
+                              </label>
+                              <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                  <input type="checkbox"  id="checkbox" name="affections" value="Cancer"  >
+                                  Cancer
+                              </label>
+                              <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                  <input type="checkbox"  id="checkbox" name="affections" value="Trouble cardiaques"  >
+                                      
+                                  Trouble cardiaques
+                              </label>
+                              <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                  <input type="checkbox"  id="checkbox" name="affections" value="Angine de poitrine"  >
+                                  Angine de poitrine
+                              </label>
+                              <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                  <input type="checkbox"  id="checkbox" name="affections" value="Maladie Neurologique"  >
+                                      
+                                  Maladie Neurologique
+                              </label>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align">
+                              <input type="checkbox"  id="checkbox" name="affections" value="Dermatose"  >
+                              Dermatose
+                                 
+                              </label>
+                              <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                <input type="checkbox"  id="checkbox" name="affections" value="Rhumatisme Articulaire"  >
+                                  Rhumatisme Articulaire aigu
+                            </label>
+                              <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                  <input type="checkbox"  id="checkbox" name="affections" value="Diabète sous insuline"  >
+                                      
+                                  Diabète sous insuline
+                              </label>
+                              <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                  <input type="checkbox"  id="checkbox" name="affections" value="Maladie du foie"  >
+                                      
+                                  Maladie du foie
+                              </label>
+                             
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align">
+                              <input type="checkbox"  id="checkbox" name="affections" value="Drépanocytose(ss,sc,cc,)"  >
+                              Drépanocytose(ss,sc,cc,)
+                            </label>
+                            <label class="col-form-label col-md-3 col-sm-3 label-align">
+                              <input type="checkbox"  id="checkbox" name="affections" value="Trouble de la coagulation sanguine"  >
+                                  
+                              Trouble de la coagulation sanguine
+                          </label>
+                               <label class="col-form-label col-md-3 col-sm-3 label-align">
+                                <input type="checkbox"  id="checkbox" name="affections" value="Asthme instable(crise -de 6mois)"  >
+                                      
+                                  Asthme instable(crise -de 6mois)
+                              </label>
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">
+                            <input type="checkbox"  id="checkbox" name="affections" value="Aucune"  >  
+                            Aucune
+                        </label>
+                          </div>
+                      </div>
+                      <div id="step-3">
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">6.Avez-vous déjà eu une transfusion de sang</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="transfusion" value="Oui" id="transfusion-1"  class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="transfusion" value="Non" id="transfusion-2" class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">7.Avez-vous déjà pris de la drogue(en injection, ou nasale ou fumé)</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="drogue" value="Oui" id="drogue-1" class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="drogue" value="Non" id="drogue-2" class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">Au cours des 12 derniers mois, avez-vous:</label>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">8.Fait des tatouages, scarifications, percées d'oreilles ou autre piercing?</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="tatou" value="Oui" id="tatou-1" class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="tatou" value="Non" id="tatou-2"  class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">9.Eu une infection sexuellement transmissible(IST)(syphilis,gonococcie,ect.)?</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="infection" value="Oui" id="infection-1"  class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="infection" value="Non" id="infection-2"  class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">10.Eu un accident d'exposition au sang ou tout autre liquide biologique</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="exposition" value="Oui" id="exposition-1"  class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="exposition" value="Non" id="exposition-2"  class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">11.Eu des relations sexuelles avec un(e) prostitué(e) ou contre récompense</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="relations" value="Oui" id="relations-1" class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="relations" value="Non" id="relations-2"  class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="step-4">
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">Au cours des 6 derniers mois, avez-vous:</label>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">12.Subit une intervention chirurgicale?</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="chirgi" value="Oui" id="chirgi-1" class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="chirgi" value="Non" id="chirgi-2"  class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">13.Combien de partenaires sexuels différents avez-vous eu?</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="number" name="n_partenaire" placeholder="Combien de partenaires sexuels différents avez-vous eu?">
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">14.Avez-vous été enceinte, accouché, avorté?(sujets féminins uniquement)</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="enceinte" value="Oui" id="enceinte-1" class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="enceinte" value="Non" id="enceinte-2"  class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">15.Subit une endoscopie et/ou un traitement par acupuncture?</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="acupuncture" value="Oui" id="acupuncture-1" class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="acupuncture" value="Non" id="acupuncture-2" class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">16.Subit des sutures de plaies?</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="sut_plaies" value="Oui" id="sut_plaies-1" class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="sut_plaies" value="Non" id="sut_plaies-2"  class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">17.Eu un nouveau partenaire sexuel?</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="partenaire_s" value="Oui" id="partenaire_s-1" class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="partenaire_s" value="Non" id="partenaire_s-2"  class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">18.Au Cours des 30 derniers jours, avez-vous vacciné contre :</label>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align"></label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div class="category">
+                              <label for="affections">
+                                <span class="radio">Fièvre jaune</span>
+                                  <input type="checkbox" name="vaccin" value="">
+                              </label>
+                              <label for="affections">
+                                <span class="radio">Rougeole</span>
+                                  <input type="checkbox" name="vaccin" value="">
+                                  
+                              </label>
+                              <label for="affections">
+                                <span class="radio">Varicelle</span>
+                                  <input type="checkbox" name="vaccin" value="">
+                                      
+                                  
+                              </label>
+                              <label for="affections">
+                                <span class="radio">Rubéole</span>
+                                  <input type="checkbox" name="vaccin" value="">
+                                  
+                              </label>
+                              <label for="affections">
+                                <span class="radio">Typhoïde</span>
+                                  <input type="checkbox" name="vaccin" value="">
+                                  
+                              </label>
+                              <label for="affections">
+                                <span class="radio">Autre vaccin(préciser)</span>
+                                  <input type="text" name="vaccin" value="" class="form-control">
+                                  
+                              </label>
+                          </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">Au cours des 15 derniers jours, avez-vous:</label>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">19.Subit des soins dentaires?</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="s_dentaire" value="Oui" id="s_dentaire-1" class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="s_dentaire" value="Non" id="s_dentaire-2"  class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="step-5">
+                        <h2 class="StepTitle">Step 5 Content</h2>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">20.Fait de la fièvre?</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="fievre" value="Oui" id="fievre-1" class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="fievre" value="Non" id="fievre-2" class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">Récemment ou en ce moment, avez-vous:</label>
+                        </div>
+                          <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align">21.Des plaies ou des lésions cutanées en cours?</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="plaies_ou" value="Oui" id="plaies_ou-1" class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="plaies_ou" value="Oui" id="plaies_ou-2"  class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">22.Pris ou êtes en train de prendre des médicaments?</label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <div id="en_couple" class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="medicament" value="Oui" id="medicament-1" class="join-btn"> &nbsp; OUI &nbsp;
+                              </label>
+                              <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                                <input type="radio" name="medicament" value="Non" id="medicament-2" class="join-btn"> NON
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">Si oui, quels médicaments?</label>
+                        </div>
+                          <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align"></label>
+                          <div class="col-md-6 col-sm-6 ">
+                            <label for="affections">
+                              <input type="checkbox" name="medicament_p" value="Antibiotique dans les 07 jours">
+                              <span class="radio">Antibiotique dans les 07 jours</span>
+                          </label>
+                          <label for="affections">
+                              <input type="checkbox" name="medicament_p" value="Anti-inflammatoire/Corticoïde dans les 03 jours">
+                                  
+                              <span class="radio">Anti-inflammatoire/Corticoïde dans les 03 jours</span>
+                          </label>
+                          <label for="affections">
+                            <input type="checkbox" name="medicament_p" value="Antipaludéen dans les 14 jours">
+                            <span class="radio">Antipaludéen dans les 14 jours</span>
+                        </label>
+                        <label for="affections">
+                          <input type="text" name="medicament_p" value="" class="form-control">
+                          <span class="radio">Autre médicaments</span>
+                      </label>
+                      <label for="affections">
+                          <input type="date" name="date_de_p" value="" class="form-control">
+                          <span class="radio">date de prise</span>
+                      </label>
+                      <label for="affections">
+                          <input type="text" name="motif_p_medicament" value="" class="form-control">
+                          <span class="radio">Motif du traitement?</span>
+                      </label>
+                      </div>
+                    </div>
+                      <div class="form-group row">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align">23.Allaitez-vous un enfant?</label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <div id="en_couple" class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                              <input type="radio" name="enfant" value="Oui" id="enfant-1" class="join-btn"> &nbsp; OUI &nbsp;
+                            </label>
+                            <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                              <input type="radio" name="enfant" value="Non" id="enfant-2" class="join-btn"> NON
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align">24.Etes-vous enceinte actuellement?</label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <div id="en_couple" class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                              <input type="radio" name="enceint_actu" value="Oui" id="enceint_actu-1" class="join-btn"> &nbsp; OUI &nbsp;
+                            </label>
+                            <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                              <input type="radio" name="enceint_actu" value="Non" id="enceint_actu-2" class="join-btn"> NON
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align">25.Etes-vous en règles(menstruation)?</label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <div id="en_couple" class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                              <input type="radio" name="en_regle" value="Oui" id="en_regle-1" class="join-btn"> &nbsp; OUI &nbsp;
+                            </label>
+                            <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                              <input type="radio" name="en_regle" value="Non" id="en_regle-2" class="join-btn"> NON
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="step-6">
+                      <div class="form-group row">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align">26.Si vous êtes un ancien donneur, avez-vous pris connaissance de vos résultats passés?</label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <div id="en_couple" class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                              <input type="radio" name="resultat_p" value="Oui" id="resultat_p-1" class="join-btn"> &nbsp; OUI &nbsp;
+                            </label>
+                            <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                              <input type="radio" name="resultat_p" value="Non" id="resultat_p-2" class="join-btn"> NON
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align">Si OUI, quel avait été les resultat?</label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <div id="en_couple" class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-secondary" data-toggle-class="btn-primary" id="en_couple-1"  data-toggle-passive-class="btn-secondary">
+                              <input type="radio" name="si_resultat" value="Positifs" id="si_resultat-1" class="join-btn"> &nbsp; Positifs &nbsp;
+                            </label>
+                            <label class="btn btn-primary" data-toggle-class="btn-primary" id="en_couple-2"  data-toggle-passive-class="btn-secondary">
+                              <input type="radio" name="si_resultat" value="Negatifs" id="si_resultat-2" class="join-btn"> Negatifs
+                            </label>
+                            <label for="si_resultat">
+                              <span class="radio">(lesquels?)</span>
+                              <input type="text" name="si_resultat" class="form-control">
+                          </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <label>
+                            <span class="radio-title">27.Poids</span>
+                            <input type="text" name="" class="form-control">
+                        </label>
+                        <label>
+                            <span class="radio-title">28.Taux d'Hb</span>
+                            <input type="text" name="" class="form-control">
+                        </label><br><br>
+                        <label>
+                            <span class="radio-title">29.TA</span>
+                            <input type="text" name="" class="form-control">
+                            <span class="radio-title">mmHg(si max > 18 ou min > 10, contrôler dans 10')</span>
+
+                        </label>
+                        </div>
+                      </div>
+                      <div class="check">
+                        <label for="consentement">
+                            <input type="checkbox" name="consentement" value="j_ai bien été informé">
+                                
+                            j'ai bien été informé du processus du don et eu la possibilité de poser des question
+                        </label>
+                    </div>
+                    <div class="check">
+                        <label for="consentement">
+                            <input type="checkbox" name="consentement" value="je confirme que">
+                                
+                            je confirme que mes données personnelles sont correctes et que j'ai repondu en toute conscience aux questions qui m'ont été posées.
+                        </label>
+                    </div>
+                    <div class="check">
+                        <label for="consentement">
+                            <input type="checkbox" name="consentement" value="je consens à donner de mon sang">
+                                
+                            je consens à donner de mon sang et au dépistage qui sera effectué.
+                        </label>
+                    </div>
+                    <div class="check">
+                        <label for="consentement">
+                            <input type="checkbox" name="consentement" value="j_accepte que mon sang">
+                                
+                            j'accepte que mon sang soit transfusé à n'importe quel patient et ou servir à la rechercher.
+                        </label>
+                    </div>
+                    <div class="check">
+                        <label for="consentement">
+                            <input type="checkbox" name="consentement" value="j_ai été informé que">
+                                
+                            j'ai été informé que je peux entre en possession des résultats des tests biologiques faits sur mon sang.
+                        </label>
+                    </div>
+                </div>
+                    </div>
+                    </div>
+                    <!-- End SmartWizard Content -->
+           
+        <script src="{% static 'js/entretien.js' %}"></script>
+        <script src="{% static 'js/entretin.js' %}"></script>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{% static 'vendors/jquery/dist/jquery.min.js'%}"></script>
+    <!-- Bootstrap -->
+   <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
+    <!-- FastClick -->
+    <script src="{% static 'vendors/fastclick/lib/fastclick.js'%}"></script>
+    <!-- NProgress -->
+    <script src="{% static 'vendors/nprogress/nprogress.js'%}"></script>
+    <!-- jQuery Smart Wizard -->
+    <script src="{% static 'vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js'%}"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="{% static 'build/js/custom.min.js'%}"></script>
+    
+
+	
+  </body>
+</html>

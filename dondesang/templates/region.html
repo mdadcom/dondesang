@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <center>
+        <h1>Region</h1>
+        <form method="post" action="{% url 'add-region' pays.pk %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="input-group w-50">
+                    <div class="input-group-addon ">
+                        <i class="fa fa-map"></i>
+                    </div>
+                    <input type="text" id="nom" name="nom" placeholder="Region" class="form-control">
+                </div>
+            </div>
+            <div class="form-actions form-group">
+                <button type="submit" class="btn btn-success btn-sm">Ajoute</button>
+            </div>
+        </form>
+    </center>
+</section>
+{% endblock %}

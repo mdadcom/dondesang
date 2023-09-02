@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Lieu et Date de collecte Ferme</h1>
+
+
+
+    <div class="col-sm-12 w-50">
+        <div class="x_panel">
+          <div class="x_title">
+            <h3>Collects </h3>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Settings 1</a>
+                    <a class="dropdown-item" href="#">Settings 2</a>
+                  </div>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+              <div class="row">
+                  <div class="col-sm-12">
+                    <div class="card-box table-responsive">
+            <p class="text-muted font-13 m-b-30">
+              Liste collect
+            </p>
+            <table id="datatable-buttons" class="table table-striped table-hover center">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Code</th>
+                  <th>Nom de collect</th>
+                    <th>Date de collect</th>
+                    <th></th>
+    
+                </tr>
+              </thead>
+    
+              {% for collects in collects_ferme %}
+              <tbody>
+                <tr>
+                    <td>{{collects.code}}</td>
+                    <td>{{collects.name}}</td>
+                    <td>{{collects.date}}</td>
+                    <td>
+                        <a href="{% url 'editcol' collects.pk %}"><i class="fa fa-pencil"></i></a>
+                        <a href="{% url 'delete-collects' collects.pk %}"><i class="fa fa-trash-o "></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    </div>
+{% endblock  %}

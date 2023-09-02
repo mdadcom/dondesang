@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<section>
+    <center>
+        <h1>Modifier Ville</h1>
+        <form method="post" action="{% url 'update-ville' ville.pk %}">
+            {% csrf_token %}
+            <div  class="form-group">
+                <div class="form-group">
+                    <div class="input-group w-50">
+                        <div class="input-group-addon ">
+                            <i class="fa fa-map"></i>
+                        </div>
+
+                        {% render_field form.region placeholder="Region" class="form-control" %}
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <div class="input-group w-50">
+                        <div class="input-group-addon ">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        {% render_field form.nom placeholder="Ville" class="form-control" %}
+                    </div>
+                </div>
+
+                    <button type="submit" class="btn btn-success">Enregistre</button>
+            </div>
+        </form>
+    </center>
+</section>
+{% endblock  %}

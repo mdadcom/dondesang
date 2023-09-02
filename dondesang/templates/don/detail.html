@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> <center>{% for collects_lis in collects_lis %}{{collects_lis.name}}{% endfor %} </center></h1>
+
+<a href="{% url 'add-donneur' collects.pk %}" class="btn btn-green btn-xs"><i class="fa fa-tint"> Faire un Don</i></a>
+
+<div class="contenaire">
+
+<div class="col-md-12 col-sm-12 ">
+    <div class="x_panel">
+      <div class="x_title">
+        <h3>DONNEURS </h3>
+        <ul class="nav navbar-right panel_toolbox">
+          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Settings 1</a>
+                <a class="dropdown-item" href="#">Settings 2</a>
+              </div>
+          </li>
+          <li><a class="close-link"><i class="fa fa-close"></i></a>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+          <div class="row">
+              <div class="col-sm-12">
+                <div class="card-box table-responsive">
+        <p class="text-muted font-13 m-b-30">
+          Lister Donneurs
+        </p>
+    
+        <table id="datatable-buttons" class="table table-striped table-hover">
+          <div class="form-group w-25"  >
+            <input id="search" align="left" class="form-control" type="text" placeholder="Rechercher.....">
+          <div/>
+          <thead>
+            <tr>
+              <th>Code</th>
+                <th>Numero Cnib</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Date de naissance</th>
+                <th>lieu de naissance</th>
+                <th>Sexe</th>
+                <th>Profession</th>
+                <th>Secteur</th>
+                <th>Telephone</th>
+                <th>Email</th>
+                <th></th>
+
+            </tr>
+          </thead>
+
+          
+          <tbody id="myTable">
+            {% for donneur in donne %}
+            <tr>
+              <td>{{donneur.code }}</td>
+                <td>{{donneur.numero_cnib }}</td>
+                <td>{{donneur.nom}}</td>
+                <td>{{donneur.prenom}}</td>
+                <td>{{donneur.date_de_naissance |date:'d F Y'}}</td>
+                <td>{{donneur.lieu_de_naissance}}</td>
+                <td>{{donneur.sexe}}</td>
+                <td>{{donneur.profession}}</td>
+                <td>{{donneur.secteur}}</td>
+                <td>{{donneur.tel}}</td>
+                <td>{{donneur.email}}</td>
+                <td>
+                    <a href="{% url 'editdo' donneur.pk %}" class="btn btn-danger-color"><i class="fa fa-pencil"></i></a>
+                    <a href="{% url 'delete-donneur' donneur.pk %}" class="btn btn-danger-color"><i class="fa fa-trash-o "></i></a>
+                    <a href="{% url 'extraire_pdf' donneur.pk %}">Extraire en PDF</a>
+                </td>
+            </tr>
+            {% endfor %}
+            {{donne}}<br/>
+            Has Previous:{{ donne.has_previous }}</br>
+            Has Next: {{ donne.has_next }}<br/>
+            Current: {{ donne.number }}<br/>
+            Number of Pages {{ donne.paginator.num_pages }}
+            {% if donne.has_previous %}
+              <a class="btn btn-danger" href="?page=1">&laquo First</a>
+              <a class="btn btn-info" href="?page={{ donne.previous_page_number }}">Prev</a>
+            {% endif %}
+            Page {{ donne.number }} of {{ donne.paginator.num_pages }}
+            {% if donne.has_next  %}
+            <a class="btn btn-info" href="?page={{donne.next_page_number}}">Next</a>
+            {% endif %}
+            <a class="btn btn-danger" href="?page={{donne.paginator.num_pages}}">Last &raquo</a>
+           
+          
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#search").on("keyup", function(){
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1)
+      });
+    });
+  });
+</script>
+{% endblock %}

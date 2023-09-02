@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+<br><br>
+
+<div class="container">
+    <div class="row">
+<form method="post" action="{% url 'update-donneur' donneur.pk %}">
+    {% csrf_token %}
+
+    <div class="row mb-1">
+        <div class="col">
+            <div class="form">
+                <label for="numero_cnib">Lieu de Collecte</label>
+                {% render_field form.collects class="form-control" %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <label for="numero_cnib">Numero Cnib</label>
+                {% render_field form.numero_cnib class="form-control" %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <label for="nom">Nom de Famille</label>
+                 {% render_field form.nom placeholder="Ville" class="form-control" %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <label for="nom_de_jeune">Nom de Jeunesse</label>
+                 {% render_field form.nom_de_jeune class="form-control" %}
+            </div>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col mb-1">
+            <div class="form">  
+                <label for="prenom">Prenom</label>
+                 {% render_field form.prenom class="form-control" %}
+            </div>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col mb-1">
+            <div class="form">  
+                <label for="date_de_naissance">Date de Naissance</label>
+                 {% render_field form.date_de_naissance class="form-control" %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <label for="age">Âge</label>
+                 {% render_field form.age class="form-control" %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <label for="lieu_de_naissance">Lieu de Naissance</label>
+                 {% render_field form.lieu_de_naissance class="form-control" %}
+            </div>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col">
+            <div class="form">
+                <label for="sexe">Sexe</label>
+                 {% render_field form.sexe class="form-control" %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <label for="profession">Profession</label>
+                 {% render_field form.profession class="form-control" %}
+            </div>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col">
+            <div class="form">
+                <label for="Ville">Ville</label>
+                 {% render_field form.ville class="form-control" %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <label for="secteur">Secteur</label>
+                 {% render_field form.secteur class="form-control" %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <label for="tel">Telephone</label>
+                 {% render_field form.tel placeholder="Ville" class="form-control" %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <label for="email">Email</label>
+                 {% render_field form.email  class="form-control" %}
+            </div>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col">
+            <label for="type">Type de Don</label>
+                 {% render_field form.type class="form-control" %}
+            </div>
+        </div>
+        {{ form1.as_p}}
+        <button type="submit" class="btn btn-primary btn-block mb-4 " style="200px">Modifier</button>
+    </div>
+   
+</form>
+</div>
+</div>
+{% endblock  %}

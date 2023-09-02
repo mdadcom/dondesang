@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form method="post" action="{% url 'zone' %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="input-group w-50">
+            <label class="form-label" for="ville"></label>
+            <div class="input-group-addon">
+                <i class="fa fa-map-marker"></i>
+            </div>
+            
+            <select name="ville" class="form-control" required>
+                {% for ville in ville %}
+                <option value="{{ville.id}}">{{ville.nom}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group w-50">
+            <div class="input-group-addon">
+                <i class="fa fa-map-marker"></i>
+            </div>
+            <input type="text" id="name" name="name" placeholder="Lieu de Collects" class="form-control">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success btn-sm">Enregistre</button>
+</form>
+
+{% endblock %}

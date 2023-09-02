@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        
+        
+        <p style="display: inline-block; margin-right: 200px; margin-top: 0; margin-bottom: 0;">Date du jour:&nbsp;&nbsp;&nbsp;<strong>{{entretiens.date_du_jour|default:''}}</strong></p>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">Numéro de don:&nbsp;&nbsp;&nbsp;<strong>{{entretiens.numero|default:''}}</strong></p><br>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">1.Type de collecte?:&nbsp;&nbsp;&nbsp;<strong>{{entretiens.collecte|default:''}}</strong></p><br>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">2.Est-ce votre premier don?:&nbsp;&nbsp;&nbsp;{{entretiens.premier|default:''}}</p>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">Si premier don, dites en une phrase vos motivations:&nbsp;<strong>{{entretiens.si_premier|default:''}}</strong></p>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">3.Vivez-vous en couple?:&nbsp;&nbsp;&nbsp;<strong>{{entretiens.en_couple|default:''}}:&nbsp;&nbsp;&nbsp; {{entretiens.en_couple_oui|default:''}} {{entretiens.en_couple_non|default:''}}</strong></p><br>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">4.Vous senter-vous en 'bonne santé'en ce moment?&nbsp;&nbsp;&nbsp;<strong>{{entretiens.sante|default:''}}</strong></p>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">5.Avez-vous eu par le passé ou avez-vous actuellement une ou pluisieurs des affections suivantes?</p><br><strong>{{entretiens.affections|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">6.Avez-vous déjà eu une transfusion de sang?</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{entretiens.transfusion|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">7.Avez-vous déjà pris de la drogue (en injection, ou nasale ou fumé)?</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{entretiens.drogue|default:''}}</strong><br>
+        <p><strong>Au cour des 12 derniers mois, avez-vous :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">8.Fait des tatouages, scarifications,Percées d'oreilles ou autres piercing?</p><br><strong>{{entretiens.tatou|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">9.Eu une infection sexuellement transmissible(IST)(syphilis,gonococcie,ect.)?</p><br><strong>{{entretiens.infection|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">10.Eu un accident d'exposition au sang ou tout autre liquide biologique</p><br><strong>{{entretiens.exposition|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">11.Eu des relations sexuelles avec un(e) prostitué(e) ou contre récompense</p><br><strong>{{entretiens.relations|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p><strong>Au cours des 6 derniers mois, avez-vous:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">12.Subit une intervention chirurgicale?</p><br><strong>{{entretiens.chirgi|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">13.Combien de partenaires sexuels différents avez-vous eu?</p><br><strong>{{entretiens.n_partenaire|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">14.Avez-vous été enceinte, accouché, avorté?(sujets féminins uniquement)</p><br><strong>{{entretiens.enceinte|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p><strong>Au cours des 3 derniers mois, avez-vous:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">15.Subit une endoscopie et/ou un traitement par acupuncture?</p><br><strong>{{entretiens.acupuncture|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">16.Subit des sutures de plaies?</p><br><strong>{{entretiens.sut_plaies|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">17.Eu un nouveau partenaire sexuel?</p><br><strong>{{entretiens.partenaire_s|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">18.Au Cours des 30 derniers jours, avez-vous vacciné contre :</p><br><strong>{{entretiens.vaccin|default:''}}{{entretiens.auvaccin|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p><strong>Au cours des 15 derniers jours, avez-vous:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">19.Subit des soins dentaires?</p><br><strong>{{entretiens.s_dentaire|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">20.Fait de la fièvre?</p><br><strong>{{entretiens.fievre|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p><strong>Récemment ou en ce moment, avez-vous:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">21.Des plaies ou des lésions cutanées en cours?</p><br><strong>{{entretiens.plaies_ou|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">22.Pris ou êtes en train de prendre des médicaments?</p><br><strong>{{entretiens.medicament|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">Si oui, quels médicaments?</p><br><strong>{{entretiens.medicament_p|default:''}}{{entretiens.aumedicament|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">date de prise</p><br><strong>{{entretiens.date_de_p|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">Motif du traitement?</p><br><strong>{{entretiens.motif_p_medicament|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">23.Allaitez-vous un enfant?</p><br><strong>{{entretiens.enfant|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">24.Etes-vous enceinte actuellement?</p><br><strong>{{entretiens.enceint_actu|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">25.Etes-vous en règles(menstruation)?</p><br><strong>{{entretiens.en_regle|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">26.Si vous êtes un ancien donneur, avez-vous pris connaissance de vos résultats passés?</p><br><strong>{{entretiens.resultat_p|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">Si OUI, quel avait été les resultat?</p><br><strong>{{entretiens.si_resultat|default:''}}(lesquels){{entretiens.le_resultat|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">27.Poids:</p><strong>{{entretiens.poid|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">28.Taux d'Hb</p><strong>{{entretiens.taux_hd|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">29.TA</p><strong>{{entretiens.ta|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><br>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">30.Consentement du donneur</p><br><strong>{{entretiens.consentement|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <p><strong>Conclusion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;"></p><strong>{{entretiens.apte|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><br>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">Code CI</p><strong>{{entretiens.code_ci|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><br>
+        <p style="display: inline-block; margin-top: 0; margin-bottom: 0;">code, Nom et Signature agent:</p><br><strong>{{entretiens.identification|default:''}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+    </body>
+</html>

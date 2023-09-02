@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <center>
+        <h1>Ville</h1>
+        <form method="post" action="{% url 'add-ville' region.pk %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="input-group w-50">
+                    <div class="input-group-addon ">
+                        <i class="fa fa-map-marker"></i>
+                    </div>
+                    <input type="text" id="nom" name="nom" placeholder="Ville" class="form-control">
+                </div>
+            </div>
+            <div class="form-actions form-group">
+                <button type="submit" class="btn btn-success btn-sm">Ajoute</button>
+            </div>
+        </form>
+    </center>
+</section>
+{% endblock %}

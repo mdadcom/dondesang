@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h3 style="display: inline-block; border-bottom: 1px solid; margin-bottom: 0;">IDENTIFICATION DE LA COLLECTE</h3>
+        <ul style="margin-top: 0; margin-bottom: 0;">
+        
+        <p>Numero de la collecte: {{ donneur.nom }}</p>
+        <p style="margin-top: 0; margin-bottom: 0;">Date de la collecte: {{ donneur.nom_de_jeune }}</p>
+        </ul>
+        <h3 style="display: inline-block; border-bottom: 1px solid; margin-bottom: 0;">PARTIE RESERVEE AU DONNEUR:</h3><br>
+        
+            <p style="display: inline-block; margin-right: 200px;">Nom:&nbsp;&nbsp;&nbsp;{{ donneur.nom }}</p>
+            <p style="display: inline-block; margin-right: 100px; margin-top: 0;">Nom de jeune fille:&nbsp;{{ donneur.nom_de_jeune }}</p>
+            <p style="display: inline-block; margin-top: 0;">Prénom:&nbsp;{{ donneur.prenom }}</p><br>
+            <p style="display: inline-block;margin-top: 0;margin-bottom: 0;">Date et lieu de naissance:&nbsp;&nbsp;{{ donneur.date_de_naissance|date:"d-m-Y" }}</p> &nbsp;&nbsp;
+            <p style="display: inline-block; margin-top: 0;">Âge(...ans):&nbsp;{{ donneur.age }}</p>&nbsp;&nbsp;
+            <p style="display: inline-block; margin-top: 0;">à:&nbsp;{{ donneur.lieu_de_naissance }}</p><br> 
+            <p style="display: inline-block;margin-top: 0;margin-bottom: 0;">Sexe:&nbsp;&nbsp;{{ donneur.sexe }}</p> &nbsp;&nbsp;
+            <p style="display: inline-block; margin-top: 0;">Profession:&nbsp;{{ donneur.pression }}</p><br>
+            <p style="display: inline-block;margin-top: 0;margin-bottom: 0;">Adresse:&nbsp;&nbsp;</p> &nbsp;&nbsp;
+            <p style="display: inline-block; margin-right: 100px; margin-top: 0;">Ville:&nbsp;&nbsp;&nbsp;{{ donneur.ville }}</p>
+            <p style="display: inline-block; margin-top: 0;">Secteur:&nbsp;&nbsp;&nbsp;{{ donneur.secteur }}</p> <br>
+            <p style="display: inline-block;margin-top: 0;margin-bottom: 0;">Tél:&nbsp;&nbsp;&nbsp;{{ donneur.tel }}</p> &nbsp;&nbsp;<br>
+            <p style="display: inline-block; margin-bottom: 0;">Email:&nbsp;&nbsp;&nbsp;{{ donneur.email }}</p> &nbsp;&nbsp; <br>  
+            <p style="display: inline-block; margin-bottom: 0;">Type de don:&nbsp;&nbsp;&nbsp;{{ donneur.type }}</p> &nbsp;&nbsp;     
+       
+        
+        
+            
+    </body>
+</html>

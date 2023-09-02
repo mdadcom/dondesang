@@ -1,0 +1,280 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.containeur{
+    width: 1300px;
+    height: 725px;
+    margin: 1% auto;
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+h3{
+    text-align: center;
+    margin-bottom: 2  0px;
+    color: #777;
+}
+.containeur forms{
+    
+    width: 1580px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: 0.2s;
+}
+
+forms input{
+    width: 40%;
+    padding: 15px 10px;
+    margin: 25px 0;
+    margin-top: 10px;
+    border: 0;
+    border-bottom: 1px solid #999;
+    outline:none;
+    background: transparent;
+}
+::placeholder{
+    color: #777;
+}
+forms .form select{
+    width: 40%;
+    padding: 5px 20px;
+    margin: 25px 0;
+    margin-top: 10px;
+    text-align: center;
+    border: 0;
+    border-bottom: 1px solid #999;
+    outline:none;
+    background: transparent;
+}
+forms .form label{
+    font-size: 20px;
+    font-weight: 500;
+}
+forms .check{
+    display: flex;
+    flex-direction: column;
+}
+forms .check label {
+    display: flex;
+    align-items: center;
+    }
+forms .check input[type="checkbox"] {
+    margin-right: 10px;
+    }
+.btn-box{
+    width: 75%;
+    margin: 40px;
+    text-align: center;
+}
+forms button{
+    width: 110px;
+    height: 35px;
+    margin: 0 15px;
+    background: linear-gradient(to right, #00aacc, #4070f4);
+    border-radius: 10px;
+    border: 0;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+forms .grouping{
+    display: flex;
+}
+forms .grouping input{
+    max-width: 100px;
+
+}
+
+#form2{
+    left: 1700px;
+}
+
+#form3{
+    left: 1700px;
+}
+
+#form4{
+    left: 1700px;
+}
+#form5{
+    left: 1700px;
+}
+#form6{
+    left: 1700px;
+}
+#form7{
+    left: 1700px;
+}
+#form8{
+    left: 1700px;
+}
+#form9{
+    left: 1700px;
+}
+
+forms .radio-details .radio-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+forms .radio-details label{
+    font-size: 20px;
+    font-weight: 500;
+}
+forms .radio-details .category{
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+.radio-details .category label{
+    display: flex;
+    bottom: 20px;
+    align-items: center;
+}
+.radio-details .category .dot{
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+}
+#collecte-1:checked ~ .category label .one,
+#collecte-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #9b59b6;
+}
+#premier-1:checked ~ .category label .one,
+#premier-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #9b59b6;
+}
+#en_couple-1:checked ~ .category label .one,
+#en_couple-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #9b59b6;
+}
+#en_couple_oui-1:checked ~ .category label .three,
+#en_couple_oui-2:checked ~ .category label .four{
+    border-color: #d9d9d9;
+    background: #9b59b6;
+}
+#en_couple_non-1:checked ~ .category label .five,
+#en_couple_non-2:checked ~ .category label .six,
+#en_couple_non-3:checked ~ .category label .seven{
+    border-color: #d9d9d9;
+    background: #9b59b6;
+}
+#sante-1:checked ~ .category label .one,
+#sante-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#transfusion-1:checked ~ .category label .one,
+#transfusion-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#drogue-1:checked ~ .category label .one,
+#drogue-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#tatou-1:checked ~ .category label .one,
+#tatou-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#infection-1:checked ~ .category label .one,
+#infection-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#exposition-1:checked ~ .category label .one,
+#exposition-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#relations-1:checked ~ .category label .one,
+#relations-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#chirgi-1:checked ~ .category label .one,
+#chirgi-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#enceinte-1:checked ~ .category label .one,
+#enceinte-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#acupuncture-1:checked ~ .category label .one,
+#acupuncture-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#sut_plaies-1:checked ~ .category label .one,
+#sut_plaies-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#partenaire_s-1:checked ~ .category label .one,
+#partenaire_s-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#s_dentaire-1:checked ~ .category label .one,
+#s_dentaire-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#fievre-1:checked ~ .category label .one,
+#fievre-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#plaies_ou-1:checked ~ .category label .one,
+#plaies_ou-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#medicament-1:checked ~ .category label .one,
+#medicament-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#enfant-1:checked ~ .category label .one,
+#enfant-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#enceint_actu-1:checked ~ .category label .one,
+#enceint_actu-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#en_regle-1:checked ~ .category label .one,
+#en_regle-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#resultat_p-1:checked ~ .category label .one,
+#resultat_p-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+#si_resultat-1:checked ~ .category label .three,
+#si_resultat-2:checked ~ .category label .four{
+    border-color: #d9d9d9;
+    background: #290238;
+}
+forms input[type="radio"]{
+    display: none;
+}
