@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+    <div class="container">
+                <div class="card-header w-50"><h1>Type de don</h1></div>
+                <div class="card-body card-block">
+                    <form action="{% url 'addty' %}" method="post" class="">
+                      {% csrf_token %}
+                        <div class="form-group">
+                            <div class="input-group w-50">
+                                <div class="input-group-addon ">
+                                    <i class="fa fa-globe"></i>
+                                </div>
+                                <input type="text" id="nom" name="nom" placeholder="" class="form-control">
+                            </div>
+                        </div>
+                       
+                        <div class="form-actions form-group">
+                            <button type="submit" class="btn btn-success btn-sm">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+          </center>
+{% endblock  %}

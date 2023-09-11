@@ -27,7 +27,6 @@ urlpatterns = [
     path('ent/', ent,name='ent'),
     path('prelev/', prelev,name='prelev'),
     path('ad-region/', ad_region,name='ad-region'),
-    path('affregion/', affregion,name='affregion'),
     path('ad-ville/', ad_ville,name='ad-ville'),
     path('affcong/', affcong,name='affcong'),
     path('collects/', collects,name='collects'),
@@ -80,5 +79,7 @@ urlpatterns = [
     path('entretien',entretien,name='entretien'),
     path('predon',predon,name='predon'),
     path('preleve',preleve,name='preleve'),
-    path('extraire-pdf/<int:donneur_pk>/', extraire_pdf, name='extraire_pdf'),
+    path('generate-pdf/', generate_pdf, name='generate_pdf'),
+    path('affty',affty,name='affty'),
+    path('addty',addty,name='addty'),
 ]

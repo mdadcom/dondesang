@@ -3,15 +3,13 @@ from django.http import HttpResponse
 from .form import *
 from .models import *
 from django.views import View
-from django.template.loader import render_to_string
 from django.core.paginator import(Paginator, EmptyPage, PageNotAnInteger)
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core import serializers
+from django.http import HttpResponse
 from reportlab.pdfgen import canvas
 import json
-from weasyprint import HTML
-from weasyprint import HTML, CSS
 
 def home(request):
     
@@ -63,20 +61,15 @@ def ad_pays(request):
    
     return render(request, 'don/ad_pays.html')
 
-def affregion(request):
-    pays_list=Pays.objects.all()
-    return render(request, 'don/ad_region.html',{'pays_list':pays_list})
-
 def ad_region(request):
-    
+    pays_list=Pays.objects.all()
     if request.method=="POST":
-        pays_id=request.POST.get('pays')
-        pays=Pays.objects.get(id=pays_id)
+        pays_pk=request.POST.get('Pays')
         nom=request.POST.get('nom')
+        pays= get_object_or_404(Pays, pk=pays_pk)
         region=Region.objects.create(pays=pays,nom=nom)
-        
-        return redirect('affregion')
     
+    return render(request, 'don/ad_region.html',{'pays_list':pays_list})
     
 def ad_ville(request):
     region_list=Region.objects.all()
@@ -448,16 +441,15 @@ def add_donneur(request, collects_pk):
         email = request.POST.get('email')
         type_pk=request.POST.get('type')
         type=Type.objects.get(pk=type_pk)
+        
         donneur= Donneur.objects.filter(numero_cnib=numero_cnib)
         donneur, created= Donneur.objects.get_or_create(numero_cnib=numero_cnib, nom=nom, nom_de_jeune=nom_de_jeune, prenom=prenom, date_de_naissance=date_de_naissance,age=age,
                                         lieu_de_naissance=lieu_de_naissance,sexe=sexe, profession=profession, ville=ville, secteur=secteur, tel=tel,
                                         email=email, type=type)
-    
         
         donneur.collects.add(Collects.objects.get(pk=collects_pk))
         donneur.save()
         request.session['donneur_id'] = donneur.id
-    
         data = {
             'collects': {
                 'pk': collects.pk,
@@ -489,6 +481,8 @@ def add_donneur(request, collects_pk):
             }
             
         return redirect('entretien')
+
+       # if not created:
             
     return render(request, "don/donneur.html",{
                     'collects':collects,
@@ -497,7 +491,6 @@ def add_donneur(request, collects_pk):
                     
                     #'msg':'Déja Enregistre',
                     'query':query,
-                    
                 })
         #return redirect('detail', collects_pk=collects_pk,)
         #return redirect("detail", collects_pk=collects_pk)
@@ -740,37 +733,28 @@ def entretien(request):
         taux_hd=request.POST.get('taux_hd')
         ta=request.POST.get('ta')
         consentement=request.POST.getlist('consentement')
-        apte=request.POST.get('apte')
-        code_ci=request.POST.get('code_ci')
-        identification=request.POST.get('identification')
-        entretien, created = Entretien.objects.get_or_create(date_du_jour=date_du_jour,numero=numero,collecte=collecte,premier=premier, si_premier=si_premier,
+        entretien = Entretien.objects.create(date_du_jour=date_du_jour,numero=numero,collecte=collecte,premier=premier, si_premier=si_premier,
                                              en_couple=en_couple,en_couple_oui=en_couple_oui,en_couple_non=en_couple_non, sante=sante, 
                                              affections=affections,transfusion=transfusion, drogue=drogue, tatou=tatou, infection=infection, exposition=exposition,
                                              relations=relations, chirgi=chirgi, n_partenaire=n_partenaire, enceinte=enceinte, acupuncture=acupuncture,
                                              sut_plaies=sut_plaies, partenaire_s=partenaire_s, vaccin=vaccin, auvaccin=auvaccin, s_dentaire=s_dentaire, fievre=fievre, plaies_ou=plaies_ou,
                                              medicament=medicament, aumedicament=aumedicament,medicament_p=medicament_p, date_de_p=date_de_p, motif_p_medicament=motif_p_medicament, enfant=enfant, 
                                              enceint_actu=enceint_actu, en_regle=en_regle, resultat_p=resultat_p,si_resultat=si_resultat,le_resultat=le_resultat, 
-                                             poid=poid, taux_hd=taux_hd, ta=ta, consentement=consentement,apte=apte,code_ci=code_ci,identification=identification)
+                                             poid=poid, taux_hd=taux_hd, ta=ta, consentement=consentement)
         entretien.donneur.add(Donneur.objects.get(pk=donneur_id))
         entretien.save()
-        if not created:
-            message = 'Vous avez déjà donné votre sang dans ce lieu de collecte.'
-            return HttpResponse(message)
         request.session['entretien_id'] = entretien.id
-        request.session['apte'] = apte
-        return redirect('predon')
+        return redirect('details')
     
     else:
         
-        return render(request, 'don/entretien.html', {'donneur':donneur,})
+        return render(request, 'don/entretien.html', {'donneur':donneur})
 
 
 
 def predon(request):
-    
     entretien_id = request.session.get('entretien_id')
     entretien = Entretien.objects.get(id=entretien_id)
-    apte = request.session.get('apte')
     if request.method == 'POST':
         entretien_numero = [x.numero for x in Entretien.objects.all()]
         entretien_ids=[Entretien.objects.get(pk=entretien_id)]
@@ -787,11 +771,8 @@ def predon(request):
         request.session['predon_id'] = predon.id
         return redirect('preleve')
     else:
-        context={
-            'entretien':entretien,
-            'apte':apte,
-            }
-        return render(request,'don/predon.html',context )
+        
+        return render(request,'don/predon.html', {'entretien':entretien})
     
 def preleve(request):
     predon_id = request.session.get('predon_id')
@@ -814,26 +795,32 @@ def preleve(request):
     else:
         return render(request,'don/preleve.html',{'predon':predon})
 
-def extraire_pdf(request, donneur_pk):
-    donneur = get_object_or_404(Donneur, id=donneur_pk)
-    entretiens = Entretien.objects.filter(donneur=donneur).order_by('-id').first()
-    
-    # Générer le contenu HTML pour le PDF
-    html_content = render_to_string('don/extraire_pdf_page2.html', {'entretiens': entretiens})
-    #html_content = render_to_string('don/extraire_pdf.html', {'donneur': donneur})
-    
-    # Ajouter une page break pour la deuxième page
-    #html_content += '<div style="page-break-after: always;"></div>'
-    
-    # Générer le contenu HTML pour la deuxième page
-    #html_content += render_to_string('don/extraire_pdf_page2.html', {'entretiens': entretiens})
-    
-    css = CSS(string='@page { size: A4; margin: 2mm; }')
-    
-    # Créer le PDF à partir du contenu HTML
-    pdf_file = HTML(string=html_content).write_pdf(stylesheets=[css])
-    
-    # Renvoyer le PDF en tant que réponse HTTP
-    response = HttpResponse(pdf_file, content_type='application/pdf')
-    response['Content-Disposition'] = 'inline; filename="donneur_{}.pdf"'.format(donneur_pk)
+def generate_pdf(request):
+    # Récupérez les données de la base de données
+    # Remplacez cela par votre propre logique pour récupérer les données souhaitées
+
+    data = Pays.objects.all()
+
+    # Créez le fichier PDF avec ReportLab
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="data.pdf"'
+
+    # Utilisez le canevas ReportLab pour générer le PDF
+    p = canvas.Canvas(response)
+
+    # Ajoutez les données à votre PDF
+    for item in data:
+        p.drawString(100, 100, str(item))
+
+    # Terminez le canevas
+    p.showPage()
+    p.save()
+
     return response
+def affty(request):
+    return render(request,'affty.html')
+def addty(request):
+    if request.method == 'POST':
+        nom=request.POST.get('nom')
+        Type.objects.create(nom=nom)
+    return redirect('affty')
