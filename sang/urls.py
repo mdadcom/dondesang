@@ -26,6 +26,7 @@ urlpatterns = [
     path('ad-pays/', ad_pays,name='ad-pays'),
     path('ent/', ent,name='ent'),
     path('prelev/', prelev,name='prelev'),
+    path('affregion/', affregion,name='affregion'),
     path('ad-region/', ad_region,name='ad-region'),
     path('ad-ville/', ad_ville,name='ad-ville'),
     path('affcong/', affcong,name='affcong'),

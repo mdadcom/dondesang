@@ -11,6 +11,7 @@ from django.http import HttpResponse
 from reportlab.pdfgen import canvas
 import json
 
+
 def home(request):
     
     pays = Pays.objects.all()
@@ -61,15 +62,19 @@ def ad_pays(request):
    
     return render(request, 'don/ad_pays.html')
 
-def ad_region(request):
+def affregion(request):
     pays_list=Pays.objects.all()
-    if request.method=="POST":
-        pays_pk=request.POST.get('Pays')
-        nom=request.POST.get('nom')
-        pays= get_object_or_404(Pays, pk=pays_pk)
-        region=Region.objects.create(pays=pays,nom=nom)
-    
     return render(request, 'don/ad_region.html',{'pays_list':pays_list})
+
+def ad_region(request):
+    
+    if request.method=="POST":
+        pays_id=request.POST.get('pays')
+        pays=Pays.objects.get(id=pays_id)
+        nom=request.POST.get('nom')
+        region=Region.objects.create(pays=pays,nom=nom)
+        
+        return redirect('affregion')
     
 def ad_ville(request):
     region_list=Region.objects.all()
